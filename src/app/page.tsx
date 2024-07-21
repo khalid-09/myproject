@@ -1,4 +1,5 @@
 import HeroSection from '@/components/hero-section';
+import ProjectsSection from '@/components/projects-section';
 import TechSection from '@/components/tech-section';
 
 const Page = () => {
@@ -6,6 +7,7 @@ const Page = () => {
     <>
       <HeroSection />
       <TechSection />
+      <ProjectsSection />
     </>
   );
 };

@@ -4,7 +4,7 @@ import { File, Mail, MapPin, Smartphone } from 'lucide-react';
 
 const Footer = () => {
   return (
-    <footer className="mb-6">
+    <footer className="mb-6 px-4">
       <div className="bg-[#111111] p-6 rounded-xl space-y-10  max-w-[76.375rem] mx-auto  ">
         <div className="flex items-center justify-center">
           <div className="relative h-[7.063rem] w-[18.125rem]">
@@ -16,8 +16,8 @@ const Footer = () => {
             />
           </div>
         </div>
-        <div className="flex">
-          <div className="w-[18.375rem] space-y-2">
+        <div className="flex md:flex-row flex-col gap-8 items-center">
+          <div className="w-[18.375rem] flex flex-col gap-2 items-center md:items-start">
             <div className="flex items-center gap-2">
               <Smartphone className="w-6 h-6 text-[#98A2B3]" />
               <span className="font-medium text-[#98A2B3] text-sm">
@@ -26,14 +26,14 @@ const Footer = () => {
             </div>
             <p className="text-white">+91 0000000000</p>
           </div>
-          <div className="w-[18.375rem] space-y-2">
+          <div className="w-[18.375rem] flex flex-col gap-2 items-center md:items-start">
             <div className="flex items-center gap-2">
               <Mail className="w-6 h-6 text-[#98A2B3]" />
               <span className="font-medium text-[#98A2B3] text-sm">Gmail</span>
             </div>
             <p className="text-white">demo@gmail.com</p>
           </div>
-          <div className="w-[18.375rem] space-y-2">
+          <div className="w-[18.375rem] flex flex-col gap-2 items-center md:items-start">
             <div className="flex items-center gap-2">
               <MapPin className="w-6 h-6 text-[#98A2B3]" />
               <span className="font-medium text-[#98A2B3] text-sm">
@@ -42,7 +42,7 @@ const Footer = () => {
             </div>
             <p className="text-white">Mumbai, India</p>
           </div>
-          <div className="w-[18.375rem] space-y-2">
+          <div className="w-[18.375rem] flex flex-col gap-2 items-center md:items-start">
             <div className="flex items-center gap-2">
               <File className="w-6 h-6 text-[#98A2B3]" />
               <span className="font-medium text-[#98A2B3] text-sm">

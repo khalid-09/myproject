@@ -1,60 +1,82 @@
+'use client';
+
 import {
   Sheet,
   SheetContent,
-  SheetFooter,
   SheetHeader,
   SheetTitle,
   SheetTrigger,
 } from '@/components/ui/sheet';
 import { Button } from './ui/button';
 import { Menu } from 'lucide-react';
-import Image from 'next/image';
 import Link from 'next/link';
+import { useLenis } from 'lenis/react';
+import { useState } from 'react';
 
 const MobileNav = () => {
+  const lenis = useLenis();
+  const [isOpen, setIsOpen] = useState(false);
+
+  const handleLinkClick = (
+    e: React.MouseEvent<HTMLAnchorElement, MouseEvent>,
+    target: string
+  ) => {
+    e.preventDefault();
+    const element = document.querySelector(target) as HTMLElement;
+    if (element && lenis) {
+      lenis.scrollTo(element);
+    }
+    setIsOpen(false);
+  };
+
   return (
-    <Sheet>
+    <Sheet open={isOpen} onOpenChange={setIsOpen}>
       <SheetTrigger asChild>
-        <Button size="icon">
+        <Button size="icon" onClick={() => setIsOpen(true)}>
           <Menu />
         </Button>
       </SheetTrigger>
       <SheetContent className="flex flex-col justify-between h-full">
         <SheetHeader>
           <SheetTitle>
-            {/* <div className="flex items-center gap-3">
-              <div className="h-6 w-6 relative rounded-full overflow-hidden">
-                <Image
-                  src={sessionUser?.image || 'https://github.com/shadcn.png'}
-                  alt={sessionUser?.name || 'User'}
-                  fill
-                  className="object-cover absolute"
-                />
-              </div>
-              <p>{sessionUser?.name!}</p>
-            </div> */}
             <p>Hello</p>
           </SheetTitle>
         </SheetHeader>
         <div className="flex-1 mt-20">
           <ul className="flex flex-col gap-4">
-            <li className="cursor-pointer">
-              <Link href="/dashboard">〰️ Dashboard</Link>
+            <li>
+              <Link
+                href="#services"
+                onClick={e => handleLinkClick(e, '#services')}
+              >
+                Services
+              </Link>
             </li>
-            <li className="cursor-pointer">
-              <Link href="/forum">🔗 Forum</Link>
+            <li>
+              <Link href="#media" onClick={e => handleLinkClick(e, '#media')}>
+                Media
+              </Link>
             </li>
-            <li className="cursor-pointer">
-              <Link href="/chat">🤖 Chat</Link>
+            <li>
+              <Link href="#cases" onClick={e => handleLinkClick(e, '#cases')}>
+                Cases
+              </Link>
+            </li>
+            <li>
+              <Link href="#faq" onClick={e => handleLinkClick(e, '#faq')}>
+                FAQ
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="#contacts"
+                onClick={e => handleLinkClick(e, '#contacts')}
+              >
+                Contacts
+              </Link>
             </li>
           </ul>
         </div>
-        <SheetFooter className="flex justify-end">
-          <div className="flex gap-2">
-            {/* <SignOutBtnForm />
-            <ModeToggle /> */}
-          </div>
-        </SheetFooter>
       </SheetContent>
     </Sheet>
   );

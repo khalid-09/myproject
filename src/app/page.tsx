@@ -1,5 +1,7 @@
 import ApplicationSection from '@/components/application-section';
 import DiscussSection from '@/components/discuss-section';
+import FaqSection from '@/components/faq-section';
+import Footer from '@/components/footer';
 import HeroSection from '@/components/hero-section';
 import OurTeamSection from '@/components/our-team-section';
 import ProjectsSection from '@/components/projects-section';
@@ -14,6 +16,8 @@ const Page = () => {
       <DiscussSection />
       <ApplicationSection />
       <OurTeamSection />
+      <FaqSection />
+      <Footer />
     </>
   );
 };

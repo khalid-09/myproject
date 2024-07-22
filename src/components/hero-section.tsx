@@ -65,7 +65,10 @@ import bgMobile from '../../public/bgMobile.png';
 
 const HeroSection = () => {
   return (
-    <section className="bg-[#F2F4F7] min-h-screen w-full relative overflow-hidden px-4 text-[#101828] ">
+    <section
+      id="home"
+      className="bg-[#F2F4F7] min-h-screen w-full relative overflow-hidden px-4 text-[#101828] "
+    >
       <div className="md:max-w-[76.375rem] relative z-10 w-full mx-auto">
         <header className="fixed top-6">
           <Navbar />

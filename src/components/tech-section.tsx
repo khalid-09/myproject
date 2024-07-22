@@ -3,7 +3,7 @@ import LogoBar from './logo-bar';
 
 const TechSection = () => {
   return (
-    <section className="px-4 mb-12">
+    <section id="services" className="px-4 mb-12">
       <LogoBar />
       <div className="max-w-[76.375rem]   mx-auto">
         <div className="max-w-[60rem] text-[#101828] flex md:flex-row flex-col gap-6 md:items-start items-center md:gap-32">

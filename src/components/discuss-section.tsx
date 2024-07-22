@@ -1,9 +1,12 @@
 import ContactForm from './contact-form';
-import { Card, CardContent, CardHeader } from './ui/card';
+import { Card, CardContent } from './ui/card';
 
 const DiscussSection = () => {
   return (
-    <section className="bg-gradient-to-r from-[#FABC1F] to-[#7CA546] p-14">
+    <section
+      id="contacts"
+      className="bg-gradient-to-r from-[#FABC1F] to-[#7CA546] p-14"
+    >
       <div className="max-w-[76.375rem] mx-auto flex md:flex-row flex-col justify-between">
         <div className="text-white max-w-[37.5rem] space-y-6">
           <h2 className="font-bold text-4xl">

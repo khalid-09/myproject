@@ -7,7 +7,7 @@ import ApplicationCard from './application-card';
 
 const ApplicationSection = () => {
   return (
-    <section className="p-20">
+    <section id="cases" className="p-20">
       <div className="max-w-[76.375rem] mx-auto text-[#101828]">
         <h3 className="text-4xl text-center md:text-start font-bold">
           Application development stages

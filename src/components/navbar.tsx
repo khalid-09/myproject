@@ -1,3 +1,5 @@
+'use client';
+
 import Link from 'next/link';
 import Image from 'next/image';
 
@@ -6,10 +8,24 @@ import smartphoneIcon from '../../public/smartphoneIcon.png';
 import mailIcon from '../../public/mailIcon.png';
 import {} from 'next/font/google';
 import MobileNav from './mobile-nav';
+import { useLenis } from 'lenis/react';
 
 const Navbar = () => {
+  const lenis = useLenis();
+
+  const handleLinkClick = (
+    e: React.MouseEvent<HTMLAnchorElement, MouseEvent>,
+    target: string
+  ) => {
+    e.preventDefault();
+    const element = document.querySelector(target) as HTMLElement;
+    if (element && lenis) {
+      lenis.scrollTo(element);
+    }
+  };
+
   return (
-    <nav className="px-6 py-4 min-w-full flex items-center justify-between gap-20 bg-[#fff] rounded-xl">
+    <nav className="px-6 py-4 w-full md:w-[76.375rem] flex items-center justify-between gap-20 bg-[#fff] rounded-xl">
       <div className="relative h-[3.75rem] w-[10.875rem]">
         <Image
           src={logoImg}
@@ -21,19 +37,29 @@ const Navbar = () => {
       </div>
       <ul className="max-w-[31.438rem] hidden md:flex items-center gap-6 font-medium text-sm text-[#101828]">
         <li>
-          <Link href="#services">Services</Link>
+          <Link href="#services" onClick={e => handleLinkClick(e, '#services')}>
+            Services
+          </Link>
         </li>
         <li>
-          <Link href="#media">Media</Link>
+          <Link href="#media" onClick={e => handleLinkClick(e, '#media')}>
+            Media
+          </Link>
         </li>
         <li>
-          <Link href="#cases">Cases</Link>
+          <Link href="#cases" onClick={e => handleLinkClick(e, '#cases')}>
+            Cases
+          </Link>
         </li>
         <li>
-          <Link href="#faq">FAQ</Link>
+          <Link href="#faq" onClick={e => handleLinkClick(e, '#faq')}>
+            FAQ
+          </Link>
         </li>
         <li>
-          <Link href="#contacts">Contacts</Link>
+          <Link href="#contacts" onClick={e => handleLinkClick(e, '#contacts')}>
+            Contacts
+          </Link>
         </li>
       </ul>
       <div className="gap-8 md:flex items-center hidden ">

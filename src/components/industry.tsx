@@ -20,14 +20,14 @@ const Industry = () => {
                   <div className="relative h-6 w-6">
                     <Image
                       src={item.img}
-                      alt=""
+                      alt={item.name}
                       fill
                       className="object-cover absolute"
                     />
                   </div>
                 </div>
                 <div>
-                  <p>{item.name}</p>
+                  <p className="font-medium">{item.name}</p>
                 </div>
               </div>
             ))}

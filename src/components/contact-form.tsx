@@ -17,8 +17,13 @@ import {
 } from '@/components/ui/form';
 import { Input } from '@/components/ui/input';
 import Image from 'next/image';
+import { cn } from '@/lib/utils';
 
-const ContactForm = () => {
+interface ContactFormProps {
+  location: string;
+}
+
+const ContactForm = ({ location }: ContactFormProps) => {
   const form = useForm<ContactSchema>({
     resolver: zodResolver(contactSchema),
     defaultValues: {
@@ -40,7 +45,10 @@ const ContactForm = () => {
     <Form {...form}>
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className="flex gap-6 items-end text-[#101828] "
+        className={cn(
+          'flex gap-6  items-end text-[#101828]',
+          location === 'discuss' ? 'flex-col' : 'flex-row'
+        )}
       >
         <div className="space-y-6">
           <div className="flex items-center md:flex-row flex-col gap-6">
@@ -123,12 +131,18 @@ const ContactForm = () => {
             />
           </div>
         </div>
-        <Button
-          type="submit"
-          className="px-6 py-3 w-[8.25rem] h-[3.625rem] bg-[#80A948]"
-        >
-          Get <br /> Consultation
-        </Button>
+        {location === 'home' ? (
+          <Button
+            type="submit"
+            className="px-6 py-3 w-[8.25rem] h-[3.625rem] bg-[#80A948]"
+          >
+            Get <br /> Consultation
+          </Button>
+        ) : (
+          <Button className="px-6 py-3 bg-[#FFB900] rounded-[8px]">
+            Discuss the project
+          </Button>
+        )}
       </form>
     </Form>
   );

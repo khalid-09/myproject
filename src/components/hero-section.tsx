@@ -38,7 +38,7 @@ const HeroSection = () => {
             </CardTitle>
           </CardHeader>
           <CardContent>
-            <ContactForm />
+            <ContactForm location="home" />
           </CardContent>
         </Card>
       </div>

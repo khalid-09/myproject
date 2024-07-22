@@ -3,7 +3,7 @@ import team from '../../public/team.png';
 
 const OurTeamSection = () => {
   return (
-    <section className="bg-[#F2F4F7] py-20 px-4">
+    <section className="bg-[#F2F4F7] py-20 px-4 md:mb-0 mb-10">
       <div className="max-w-[76.375rem] mx-auto flex md:flex-row flex-col items-center gap-6 text-[#101828]">
         <div className="space-y-8 max-w-[37.5rem]">
           <h3 className="font-bold text-4xl">Our Team</h3>
@@ -31,12 +31,12 @@ const OurTeamSection = () => {
             expensive but worth it
           </p>
         </div>
-        <div className="relative md:h-[25.5rem] h-full w-full md:w-[37.5rem]">
+        <div className="relative h-[300px] md:h-[25.5rem] w-full md:w-[37.5rem]">
           <Image
             alt="Team Image"
             src={team}
             placeholder="blur"
-            className="object-cover absolute"
+            className="object-cover absolute inset-0"
           />
         </div>
       </div>

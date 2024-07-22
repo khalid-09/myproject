@@ -5,10 +5,11 @@ import logoImg from '../../public/logo.png';
 import smartphoneIcon from '../../public/smartphoneIcon.png';
 import mailIcon from '../../public/mailIcon.png';
 import {} from 'next/font/google';
+import MobileNav from './mobile-nav';
 
 const Navbar = () => {
   return (
-    <nav className="px-6 py-4 w-full flex items-center gap-20 bg-[#fff] rounded-xl">
+    <nav className="px-6 py-4 min-w-full flex items-center justify-between gap-20 bg-[#fff] rounded-xl">
       <div className="relative h-[3.75rem] w-[10.875rem]">
         <Image
           src={logoImg}
@@ -63,6 +64,9 @@ const Navbar = () => {
           </div>
           <p className="text-[#80A948]">demo@gmail.com</p>
         </div>
+      </div>
+      <div className="md:hidden block">
+        <MobileNav />
       </div>
     </nav>
   );
